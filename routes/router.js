@@ -1,5 +1,5 @@
 const express = require("express");
-
+const Students = require("../models/student")
 const router = express.Router();
 
 router.get("/web" , (req, res)=>{
@@ -10,11 +10,10 @@ router.get("/web" , (req, res)=>{
 
 
 router.post("/web" , (req, res)=>{
-    console.log(req.body)
-    res.send({
-        name: "req.body.name",
-        age: req.body.age
-    })
+   Students.create(req.body).then( student =>{
+       res.send(student)
+   })
+
 })
 
 

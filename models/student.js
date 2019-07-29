@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Scheema = mongoose.scheema;
+const Scheema = mongoose.Schema;
 
 const student = new Scheema({
    name: String,
