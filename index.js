@@ -8,7 +8,10 @@ server.use(bodyParser.json());
 server.use("/student", require("./routes/router"))
 
 
-
+server.use((err, req, res, next) => {
+   res.send({error: err.message})
+} 
+)
 
 
 

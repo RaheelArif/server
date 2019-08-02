@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 const Scheema = mongoose.Schema;
 
 const student = new Scheema({
-   name: String,
+   name: {
+      type:    String,
+      required: [ true, "student name required"]
+
+   },
+
    rollNumber : Number,
    city: String,
 })
